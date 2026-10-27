@@ -54,14 +54,7 @@ partido-missao/
 > Algumas imagens são carregadas de endereços externos e podem depender de conexão com a internet e da disponibilidade do site de origem.
 
 ## 🚀 Publicação na Vercel
-
-1. Envie os arquivos para um repositório no GitHub.
-2. Acesse [vercel.com/new](https://vercel.com/new).
-3. Importe o repositório.
-4. Em **Framework Preset**, escolha **Other** (se solicitado).
-5. Mantenha a raiz do projeto como diretório de publicação e clique em **Deploy**.
-
-Como o projeto utiliza apenas HTML e CSS, **não é necessário configurar um comando de build**.
+[Acesse o site do projeto Partido Missão](https://partido-missao.vercel.app/)
 
 ## 📚 Fontes e referências
 
