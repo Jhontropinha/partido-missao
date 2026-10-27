@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Resumo informativo das propostas políticas apresentadas pelo Partido Missão na eleição presidencial de 2026." name="description"/>
+<title>Propostas Políticas - Partido Missão</title>
+
+<style>
+/* ================================================================
+   Atividade acadêmica: MBL e Partido Missão
+   CSS integrado a esta página HTML (sem arquivos externos)
+   Paleta inspirada nas cores da identidade visual do partido:
+     Amarelo: #FBBD24 | Preto: #141414 | Branco: #FFFFFF
+   Para mudar as cores desta página, altere as variáveis abaixo.
+   ================================================================ */
+
+:root {
+    --amarelo: #fbbd24;
+    --amarelo-escuro: #cc8f00;
+    --preto: #141414;
+    --preto-suave: #252525;
+    --branco: #ffffff;
+    --fundo: #f7f7f4;
+    --fundo-menu: #fff9e9;
+    --destaque-claro: #fff5d6;
+    --texto: #252525;
+    --texto-suave: #5b5b5b;
+    --borda: #e8e3d6;
+    --raio: 14px;
+    --sombra: 0 9px 32px rgba(20,20,20,.075);
+}
+
+/* 1. Regras básicas e acessibilidade */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    margin: 0;
+    padding: 24px 16px 30px;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+}
+a { color: #775000; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: #3c2900; }
+a:focus-visible {
+    outline: 3px solid var(--amarelo-escuro);
+    outline-offset: 3px;
+    border-radius: 3px;
+}
+::selection { background: var(--amarelo); color: var(--preto); }
+
+/* 2. Cabeçalho: amarelo, preto e branco */
+#header {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 25px 28px 26px;
+    border-top: 7px solid var(--amarelo);
+    border-radius: var(--raio) var(--raio) 0 0;
+    background: linear-gradient(115deg, var(--preto) 0%, #292929 100%);
+    color: var(--branco);
+    text-align: center;
+}
+#header::before {
+    content: "MISSÃO 14  •  ATIVIDADE ACADÊMICA";
+    display: inline-block;
+    padding: 3px 12px;
+    margin-bottom: 8px;
+    border: 1px solid rgba(251,189,36,.5);
+    border-radius: 100px;
+    color: var(--amarelo);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+#header h1 {
+    margin: 6px 0 4px;
+    font-size: clamp(25px, 4vw, 35px);
+    line-height: 1.2;
+    letter-spacing: -.6px;
+}
+#header p { margin: 0; color: #e1e1e1; font-size: 14px; }
+
+/* 3. Layout em duas colunas e menu lateral */
+#container {
+    display: grid;
+    grid-template-columns: 253px minmax(0, 1fr);
+    max-width: 1160px;
+    min-height: 500px;
+    margin: 0 auto;
+    border-left: 1px solid var(--borda);
+    border-right: 1px solid var(--borda);
+    background: var(--branco);
+    box-shadow: var(--sombra);
+}
+#menu {
+    padding: 25px 15px 28px;
+    border-right: 1px solid #eddba5;
+    background: var(--fundo-menu);
+}
+#menu::before {
+    content: "EXPLORAR O PROJETO";
+    display: block;
+    padding: 0 11px 11px;
+    color: #756338;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+#menu ul { list-style: none; margin: 0; padding: 0; }
+#menu li { margin: 0 0 6px; }
+#menu a {
+    display: block;
+    padding: 11px 12px;
+    border-left: 4px solid transparent;
+    border-radius: 7px;
+    color: var(--preto);
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 600;
+    transition: background-color .15s ease, border-color .15s ease;
+}
+#menu a:hover { border-color: var(--amarelo); background: #f4e8c1; }
+#menu a[aria-current="page"] {
+    border-color: var(--amarelo);
+    background: var(--amarelo);
+    color: var(--preto);
+    font-weight: 800;
+}
+
+/* 4. Conteúdo principal */
+#main {
+    min-width: 0;
+    padding: 34px clamp(20px, 4vw, 50px) 50px;
+    background: var(--branco);
+}
+#main h2 {
+    margin: 0 0 20px;
+    padding-bottom: 14px;
+    border-bottom: 3px solid var(--amarelo);
+    color: var(--preto);
+    font-size: clamp(24px, 3vw, 30px);
+    line-height: 1.25;
+}
+#main h3 {
+    margin: 28px 0 10px;
+    color: var(--preto);
+    font-size: 19px;
+    line-height: 1.3;
+}
+#main p { margin: 0 0 16px; line-height: 1.8; text-align: left; }
+#main ul, #main ol { padding-left: 23px; }
+#main li { padding-left: 2px; margin: 6px 0; line-height: 1.7; }
+#main li::marker { color: var(--amarelo-escuro); }
+#main strong { color: #191919; }
+#main > p:last-child { margin-top: 24px; }
+
+/* 5. Caixas de informação e cartões de fontes */
+.destaque {
+    max-width: 100%;
+    margin: 20px 0 26px;
+    padding: 17px 21px;
+    border-left: 5px solid var(--amarelo);
+    border-radius: 0 9px 9px 0;
+    background: var(--destaque-claro);
+}
+.destaque p { margin: 5px 0 !important; }
+.referencias { list-style: none; padding: 0 !important; }
+.referencias li {
+    padding: 15px 17px !important;
+    margin: 10px 0 !important;
+    border: 1px solid var(--borda);
+    border-left: 4px solid var(--amarelo);
+    border-radius: 8px;
+    background: #fffefa;
+}
+.referencias li a { font-weight: 700; }
+.referencias small {
+    display: block;
+    margin-top: 5px;
+    color: var(--texto-suave);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* 6. Imagens e legendas (mantém fotos existentes) */
+figure {
+    max-width: 710px;
+    margin: 18px 0 28px;
+    overflow: hidden;
+    border: 1px solid var(--borda);
+    border-radius: 11px;
+    background: #fffdf8;
+}
+figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 440px;
+    object-fit: contain;
+    background: #f5f5f5;
+}
+figcaption {
+    padding: 11px 14px;
+    border-top: 1px solid var(--borda);
+    color: var(--texto-suave);
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+/* 7. Rodapé compartilhado */
+#footer {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 21px;
+    border-top: 4px solid var(--amarelo);
+    border-radius: 0 0 var(--raio) var(--raio);
+    background: var(--preto);
+    color: var(--branco);
+    text-align: center;
+    font-size: 13px;
+}
+#footer p { margin: 0; }
+
+/* 8. Ajustes responsivos */
+@media (max-width: 760px) {
+    body { padding: 10px 8px 18px; }
+    #header { padding: 24px 14px; }
+    #container { grid-template-columns: minmax(0, 1fr); }
+    #menu { border-right: 0; border-bottom: 1px solid #eddba5; padding: 15px 12px; }
+    #menu ul { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 5px; }
+    #menu li { margin: 0; }
+    #menu a { padding: 10px; font-size: 13px; }
+    #main { padding: 26px 18px 36px; }
+}
+@media (max-width: 420px) {
+    #menu ul { grid-template-columns: 1fr; }
+    #header::before { letter-spacing: .6px; font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+}
+
+</style></head>
+<body>
+<!-- Cabeçalho da terceira página -->
+<div id="header">
+<h1>Partido Missão</h1>
+<p>Propostas políticas e plano de governo de 2026</p>
+</div>
+<div id="container">
+<!-- Mesmo menu presente nas outras páginas do trabalho -->
+<nav aria-label="Menu principal" id="menu">
+<ul>
+<li><a href="index.html">Página Inicial</a></li>
+<li><a href="pagina1.html">História do MBL</a></li>
+<li><a href="pagina2.html">Criação do Partido Missão</a></li>
+<li><a aria-current="page" href="pagina3.html">Propostas Políticas</a></li>
+<li><a href="pagina4.html">Eleições de 2026</a></li>
+<li><a href="pagina5.html">Fontes Oficiais</a></li>
+</ul>
+</nav>
+<!-- Texto informativo sobre as propostas registradas em 2026 -->
+<div id="main">
+<h2>Principais Propostas Políticas do Partido Missão</h2>
+<p>
+                O Partido Missão apresentou, nas eleições presidenciais de 2026,
+                um plano de governo associado à candidatura de Renan Santos.
+                O documento reuniu propostas nas áreas de segurança pública,
+                economia, educação, saúde, habitação e administração do Estado.
+                Seu programa é relacionado à publicação conhecida como
+                <strong>Livro Amarelo</strong>.
+            </p>
+<div class="destaque">
+<p><strong>Partido:</strong> Partido Missão (MISSÃO)</p>
+<p><strong>Número eleitoral:</strong> 14</p>
+<p><strong>Plano de referência:</strong> Propostas de governo de Renan Santos para 2026</p>
+<p><strong>Fonte principal:</strong>
+<a href="https://www.tse.jus.br/eleicoes/eleicoes-2026-content/propostas-de-governo-dos-candidatos-ao-cargo-de-presidente-da-republica-eleicoes-2026/renan-santos-propostas-de-governo" rel="noopener noreferrer" target="_blank">Tribunal Superior Eleitoral (TSE)</a>
+</p>
+</div>
+<!-- Imagem da bandeira, também utilizada na página 2 -->
+<figure>
+<img alt="Bandeira do Partido Missão com as cores preto, branco e amarelo e uma onça-pintada" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Bandeira_Partido_Miss%C3%A3o.jpg/960px-Bandeira_Partido_Miss%C3%A3o.jpg"/>
+<figcaption>
+                    Bandeira do Partido Missão. Imagem de Gabriel de C. M. Fortes,
+                    disponível no <a href="https://commons.wikimedia.org/wiki/File:Bandeira_Partido_Miss%C3%A3o.jpg" rel="noopener noreferrer" target="_blank">Wikimedia Commons</a> (CC0).
+                </figcaption>
+</figure>
+<h3>1. Economia e responsabilidade fiscal</h3>
+<p>
+                Na economia, o plano propôs controlar os gastos públicos e reduzir
+                desequilíbrios nas contas do governo. Entre as medidas divulgadas
+                estavam a revisão de despesas, mudanças em regras fiscais, o
+                combate aos chamados supersalários e reformas na administração
+                pública. A candidatura apresentou essas mudanças como caminhos
+                para melhorar as condições de investimento e crescimento econômico.
+            </p>
+<h3>2. Segurança pública e combate ao crime organizado</h3>
+<p>
+                Uma das prioridades divulgadas foi o enfrentamento às facções
+                criminosas e a retomada do controle estatal sobre territórios
+                dominados por organizações armadas. O plano citou a construção
+                de presídios de segurança máxima, o emprego de tecnologias de
+                vigilância e mudanças nas regras de investigação e punição.
+                Algumas propostas envolvem debates sobre direitos fundamentais,
+                garantias legais e limites da atuação policial.
+            </p>
+<h3>3. Educação, ciência e formação profissional</h3>
+<p>
+                Na educação básica, a proposta destacou a alfabetização pelo
+                método fônico, o acompanhamento dos resultados escolares e
+                medidas de disciplina nas escolas. Para o ensino superior,
+                o programa defendeu maior atenção às áreas de ciência, tecnologia,
+                engenharia e matemática, além de mudanças nas políticas de
+                acesso, incluindo a substituição de cotas por bolsas de mérito.
+            </p>
+<h3>4. Saúde pública e tecnologia</h3>
+<p>
+                Para a saúde, o plano incluiu a integração de prontuários
+                eletrônicos, o uso de tecnologia na organização das filas
+                de atendimento do Sistema Único de Saúde (SUS) e a ampliação
+                da telessaúde. A intenção apresentada era organizar a prioridade
+                de atendimento segundo a gravidade dos casos e facilitar
+                o acesso a serviços especializados.
+            </p>
+<h3>5. Moradia e urbanização</h3>
+<p>
+                O partido defendeu um projeto chamado de <strong>desfavelização</strong>,
+                com a proposta de transformar assentamentos precários em bairros
+                urbanizados. As medidas divulgadas incluíram regularização
+                de propriedades, melhoria de infraestrutura, saneamento,
+                abertura de ruas e ampliação da presença de serviços públicos.
+                O plano apresentou um horizonte de dez anos para esse projeto.
+            </p>
+<h3>6. Trabalho e programas sociais</h3>
+<p>
+                Na área social, a candidatura propôs substituir o Bolsa Família
+                por um modelo denominado <strong>Frentes Cidadãs</strong>,
+                baseado em trabalho remunerado em atividades de interesse
+                comunitário. Essa proposta representaria uma mudança relevante
+                no formato da assistência social e dependeria de discussão
+                sobre financiamento e proteção das famílias atendidas.
+            </p>
+<h3>7. Infraestrutura, indústria e desenvolvimento</h3>
+<p>
+                O plano também apresentou propostas para desenvolver setores
+                industriais e tecnológicos, incluindo semicondutores,
+                minerais estratégicos e fertilizantes. Entre as medidas estavam
+                a criação de Zonas Econômicas Especiais, a atração de investimentos
+                e iniciativas de modernização da produção nacional.
+            </p>
+<h3>8. Reformas da administração pública</h3>
+<p>
+                Na organização do Estado, o documento defendeu metas de
+                desempenho para a gestão pública, maior fiscalização sobre
+                recursos e a possibilidade de fusão de municípios considerados
+                fiscalmente inviáveis. Essas mudanças envolveriam decisões
+                legislativas e, em determinados casos, alterações nas normas
+                que regem a administração pública brasileira.
+            </p>
+<h3>Essas propostas já são leis?</h3>
+<p>
+<strong>Não.</strong> Os itens apresentados acima são propostas
+                divulgadas em um plano de governo, e não medidas automaticamente
+                colocadas em prática. Para serem implementadas, muitas dependeriam
+                de aprovação no Congresso Nacional, orçamento disponível e
+                compatibilidade com a Constituição e outras leis brasileiras.
+            </p>
+<h3>Fontes utilizadas na pesquisa</h3>
+<ul>
+<li>
+<a href="https://www.tse.jus.br/eleicoes/eleicoes-2026-content/propostas-de-governo-dos-candidatos-ao-cargo-de-presidente-da-republica-eleicoes-2026/renan-santos-propostas-de-governo" rel="noopener noreferrer" target="_blank">
+                        TSE — Propostas de governo de Renan Santos, por assunto
+                    </a>
+</li>
+<li>
+<a href="https://www.renanpresidente.com.br/propostas" rel="noopener noreferrer" target="_blank">
+                        Plano divulgado pela candidatura — Propostas para 2030
+                    </a>
+</li>
+<li>
+<a href="https://agenciabrasil.ebc.com.br/radioagencia-nacional/geral/audio/2026-08/plano-de-renan-santos-prioriza-seguranca-e-corte-de-gastos" rel="noopener noreferrer" target="_blank">
+                        Agência Brasil — Reportagem sobre o plano de governo (2026)
+                    </a>
+</li>
+</ul>
+<p><a href="index.html">Voltar à página inicial</a></p>
+</div>
+</div>
+<!-- Rodapé igual ao das outras páginas -->
+<div id="footer">
+<p>Atividade Acadêmica - História do MBL e Partido Missão</p>
+</div>
+</body>
+</html>

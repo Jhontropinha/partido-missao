@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Fontes oficiais e referências sobre o MBL, o Partido Missão, suas propostas e as eleições de 2026." name="description"/>
+<title>Fontes de Pesquisa - MBL e Partido Missão</title>
+
+<style>
+/* ================================================================
+   Atividade acadêmica: MBL e Partido Missão
+   CSS integrado a esta página HTML (sem arquivos externos)
+   Paleta inspirada nas cores da identidade visual do partido:
+     Amarelo: #FBBD24 | Preto: #141414 | Branco: #FFFFFF
+   Para mudar as cores desta página, altere as variáveis abaixo.
+   ================================================================ */
+
+:root {
+    --amarelo: #fbbd24;
+    --amarelo-escuro: #cc8f00;
+    --preto: #141414;
+    --preto-suave: #252525;
+    --branco: #ffffff;
+    --fundo: #f7f7f4;
+    --fundo-menu: #fff9e9;
+    --destaque-claro: #fff5d6;
+    --texto: #252525;
+    --texto-suave: #5b5b5b;
+    --borda: #e8e3d6;
+    --raio: 14px;
+    --sombra: 0 9px 32px rgba(20,20,20,.075);
+}
+
+/* 1. Regras básicas e acessibilidade */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    margin: 0;
+    padding: 24px 16px 30px;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+}
+a { color: #775000; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: #3c2900; }
+a:focus-visible {
+    outline: 3px solid var(--amarelo-escuro);
+    outline-offset: 3px;
+    border-radius: 3px;
+}
+::selection { background: var(--amarelo); color: var(--preto); }
+
+/* 2. Cabeçalho: amarelo, preto e branco */
+#header {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 25px 28px 26px;
+    border-top: 7px solid var(--amarelo);
+    border-radius: var(--raio) var(--raio) 0 0;
+    background: linear-gradient(115deg, var(--preto) 0%, #292929 100%);
+    color: var(--branco);
+    text-align: center;
+}
+#header::before {
+    content: "MISSÃO 14  •  ATIVIDADE ACADÊMICA";
+    display: inline-block;
+    padding: 3px 12px;
+    margin-bottom: 8px;
+    border: 1px solid rgba(251,189,36,.5);
+    border-radius: 100px;
+    color: var(--amarelo);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+#header h1 {
+    margin: 6px 0 4px;
+    font-size: clamp(25px, 4vw, 35px);
+    line-height: 1.2;
+    letter-spacing: -.6px;
+}
+#header p { margin: 0; color: #e1e1e1; font-size: 14px; }
+
+/* 3. Layout em duas colunas e menu lateral */
+#container {
+    display: grid;
+    grid-template-columns: 253px minmax(0, 1fr);
+    max-width: 1160px;
+    min-height: 500px;
+    margin: 0 auto;
+    border-left: 1px solid var(--borda);
+    border-right: 1px solid var(--borda);
+    background: var(--branco);
+    box-shadow: var(--sombra);
+}
+#menu {
+    padding: 25px 15px 28px;
+    border-right: 1px solid #eddba5;
+    background: var(--fundo-menu);
+}
+#menu::before {
+    content: "EXPLORAR O PROJETO";
+    display: block;
+    padding: 0 11px 11px;
+    color: #756338;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+#menu ul { list-style: none; margin: 0; padding: 0; }
+#menu li { margin: 0 0 6px; }
+#menu a {
+    display: block;
+    padding: 11px 12px;
+    border-left: 4px solid transparent;
+    border-radius: 7px;
+    color: var(--preto);
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 600;
+    transition: background-color .15s ease, border-color .15s ease;
+}
+#menu a:hover { border-color: var(--amarelo); background: #f4e8c1; }
+#menu a[aria-current="page"] {
+    border-color: var(--amarelo);
+    background: var(--amarelo);
+    color: var(--preto);
+    font-weight: 800;
+}
+
+/* 4. Conteúdo principal */
+#main {
+    min-width: 0;
+    padding: 34px clamp(20px, 4vw, 50px) 50px;
+    background: var(--branco);
+}
+#main h2 {
+    margin: 0 0 20px;
+    padding-bottom: 14px;
+    border-bottom: 3px solid var(--amarelo);
+    color: var(--preto);
+    font-size: clamp(24px, 3vw, 30px);
+    line-height: 1.25;
+}
+#main h3 {
+    margin: 28px 0 10px;
+    color: var(--preto);
+    font-size: 19px;
+    line-height: 1.3;
+}
+#main p { margin: 0 0 16px; line-height: 1.8; text-align: left; }
+#main ul, #main ol { padding-left: 23px; }
+#main li { padding-left: 2px; margin: 6px 0; line-height: 1.7; }
+#main li::marker { color: var(--amarelo-escuro); }
+#main strong { color: #191919; }
+#main > p:last-child { margin-top: 24px; }
+
+/* 5. Caixas de informação e cartões de fontes */
+.destaque {
+    max-width: 100%;
+    margin: 20px 0 26px;
+    padding: 17px 21px;
+    border-left: 5px solid var(--amarelo);
+    border-radius: 0 9px 9px 0;
+    background: var(--destaque-claro);
+}
+.destaque p { margin: 5px 0 !important; }
+.referencias { list-style: none; padding: 0 !important; }
+.referencias li {
+    padding: 15px 17px !important;
+    margin: 10px 0 !important;
+    border: 1px solid var(--borda);
+    border-left: 4px solid var(--amarelo);
+    border-radius: 8px;
+    background: #fffefa;
+}
+.referencias li a { font-weight: 700; }
+.referencias small {
+    display: block;
+    margin-top: 5px;
+    color: var(--texto-suave);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* 6. Imagens e legendas (mantém fotos existentes) */
+figure {
+    max-width: 710px;
+    margin: 18px 0 28px;
+    overflow: hidden;
+    border: 1px solid var(--borda);
+    border-radius: 11px;
+    background: #fffdf8;
+}
+figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 440px;
+    object-fit: contain;
+    background: #f5f5f5;
+}
+figcaption {
+    padding: 11px 14px;
+    border-top: 1px solid var(--borda);
+    color: var(--texto-suave);
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+/* 7. Rodapé compartilhado */
+#footer {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 21px;
+    border-top: 4px solid var(--amarelo);
+    border-radius: 0 0 var(--raio) var(--raio);
+    background: var(--preto);
+    color: var(--branco);
+    text-align: center;
+    font-size: 13px;
+}
+#footer p { margin: 0; }
+
+/* 8. Ajustes responsivos */
+@media (max-width: 760px) {
+    body { padding: 10px 8px 18px; }
+    #header { padding: 24px 14px; }
+    #container { grid-template-columns: minmax(0, 1fr); }
+    #menu { border-right: 0; border-bottom: 1px solid #eddba5; padding: 15px 12px; }
+    #menu ul { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 5px; }
+    #menu li { margin: 0; }
+    #menu a { padding: 10px; font-size: 13px; }
+    #main { padding: 26px 18px 36px; }
+}
+@media (max-width: 420px) {
+    #menu ul { grid-template-columns: 1fr; }
+    #header::before { letter-spacing: .6px; font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+}
+
+</style></head>
+<body>
+<!-- Cabeçalho da quinta página -->
+<div id="header">
+<h1>MBL e Partido Missão</h1>
+<p>Fontes de pesquisa e referências</p>
+</div>
+<div id="container">
+<!-- Navegação compartilhada com as páginas 1, 2, 3 e 4 -->
+<nav aria-label="Menu principal" id="menu">
+<ul>
+<li><a href="index.html">Página Inicial</a></li>
+<li><a href="pagina1.html">História do MBL</a></li>
+<li><a href="pagina2.html">Criação do Partido Missão</a></li>
+<li><a href="pagina3.html">Propostas Políticas</a></li>
+<li><a href="pagina4.html">Eleições de 2026</a></li>
+<li><a aria-current="page" href="pagina5.html">Fontes Oficiais</a></li>
+</ul>
+</nav>
+<!-- Lista de fontes e explicação da metodologia -->
+<main id="main">
+<h2>Fontes e Referências Utilizadas</h2>
+<p>
+                Esta página reúne os sites consultados para pesquisar a história
+                do Movimento Brasil Livre (MBL), a criação do Partido Missão,
+                as propostas apresentadas pela legenda e a participação nas
+                eleições presidenciais de 2026. Foram priorizados documentos
+                da Justiça Eleitoral, materiais de pesquisa acadêmica e
+                reportagens jornalísticas identificadas.
+            </p>
+<h3>1. História do Movimento Brasil Livre</h3>
+<ul class="referencias">
+<li>
+<a href="https://neamp.pucsp.br/organizacoes/movimento-brasil-livre-mbl" rel="noopener noreferrer" target="_blank">
+                        PUC-SP — Movimento Brasil Livre (MBL)
+                    </a>
+<small>
+                        Pesquisa do Núcleo de Estudos em Arte, Mídia e Política
+                        sobre o surgimento do MBL, suas ideias e suas ações políticas.
+                    </small>
+</li>
+<li>
+<a href="https://mbl.org.br/" rel="noopener noreferrer" target="_blank">
+                        Movimento Brasil Livre — Site do MBL
+                    </a>
+<small>
+                        Fonte institucional para conhecer como o próprio
+                        movimento apresenta suas atividades e posições.
+                    </small>
+</li>
+</ul>
+<h3>2. Criação e registro do Partido Missão</h3>
+<ul class="referencias">
+<li>
+<a href="https://www.tse.jus.br/comunicacao/noticias/2025/Novembro/tse-aprova-registro-e-homologa-estatuto-do-partido-missao" rel="noopener noreferrer" target="_blank">
+                        TSE — Aprovação do registro e do estatuto do Partido Missão
+                    </a>
+<small>
+                        Notícia oficial de 4 de novembro de 2025 sobre a decisão
+                        de registro da legenda e o uso do número eleitoral 14.
+                    </small>
+</li>
+<li>
+<a href="https://www.tse.jus.br/partidos/partidos-registrados-no-tse" rel="noopener noreferrer" target="_blank">
+                        TSE — Lista de partidos políticos registrados
+                    </a>
+<small>
+                        Relação oficial dos partidos existentes e de seus dados
+                        de registro na Justiça Eleitoral.
+                    </small>
+</li>
+<li>
+<a href="https://jovempan.com.br/noticias/mbl-anuncia-criacao-de-novo-partido-politico-chamado-missao/" rel="noopener noreferrer" target="_blank">
+                        Jovem Pan — Anúncio da criação do Partido Missão (2023)
+                    </a>
+<small>
+                        Reportagem sobre a apresentação pública do partido em evento
+                        do MBL, utilizada também como referência de imagem na Página 2.
+                    </small>
+</li>
+<li>
+<a href="https://ultimosegundo.ig.com.br/politica/2025-06-26/mbl-consegue-assinatura-para-fazer-partido-politico-missao.html" rel="noopener noreferrer" target="_blank">
+                        iG — Coleta de assinaturas para a criação da legenda (2025)
+                    </a>
+<small>
+                        Reportagem utilizada para contextualizar a coleta de apoios
+                        durante o processo de formação do partido.
+                    </small>
+</li>
+</ul>
+<h3>3. Propostas e plano de governo de 2026</h3>
+<ul class="referencias">
+<li>
+<a href="https://www.tse.jus.br/eleicoes/eleicoes-2026-content/propostas-de-governo-dos-candidatos-ao-cargo-de-presidente-da-republica-eleicoes-2026/renan-santos-propostas-de-governo" rel="noopener noreferrer" target="_blank">
+                        TSE — Propostas de governo apresentadas por Renan Santos
+                    </a>
+<small>
+                        Fonte principal para conferir o conteúdo do plano de governo
+                        associado à candidatura do Partido Missão.
+                    </small>
+</li>
+<li>
+<a href="https://www.tse.jus.br/eleicoes/eleicoes-2026-content/propostas-de-governo-dos-candidatos-ao-cargo-de-presidente-da-republica-eleicoes-2026" rel="noopener noreferrer" target="_blank">
+                        TSE — Planos de governo dos candidatos à Presidência em 2026
+                    </a>
+<small>
+                        Página oficial que permite consultar os programas das
+                        candidaturas da eleição presidencial de 2026.
+                    </small>
+</li>
+</ul>
+<h3>4. Candidatura e resultados das eleições presidenciais</h3>
+<ul class="referencias">
+<li>
+<a href="https://agenciabrasil.ebc.com.br/politica/noticia/2026-07/partido-missao-oficializa-renan-santos-como-candidato-presidencia" rel="noopener noreferrer" target="_blank">
+                        Agência Brasil — Oficialização da candidatura de Renan Santos
+                    </a>
+<small>
+                        Reportagem publicada em julho de 2026 sobre a convenção
+                        partidária que oficializou a candidatura presidencial.
+                    </small>
+</li>
+<li>
+<a href="https://www.tse.jus.br/comunicacao/noticias/2026/Setembro/tse-valida-mais-tres-registros-de-candidatura-a-presidencia-da-republica" rel="noopener noreferrer" target="_blank">
+                        TSE — Validação da candidatura de Renan Santos e Aroldo Medina
+                    </a>
+<small>
+                        Comunicado de setembro de 2026 confirmando a aprovação
+                        do registro da chapa pela Justiça Eleitoral.
+                    </small>
+</li>
+<li>
+<a href="https://agenciabrasil.ebc.com.br/politica/noticia/2026-10/renan-descarta-apoio-no-2o-turno-psd-de-caiado-libera-bases-estaduais" rel="noopener noreferrer" target="_blank">
+                        Agência Brasil — Resultado de Renan no primeiro turno
+                    </a>
+<small>
+                        Reportagem de 5 de outubro com a colocação, a votação
+                        e o posicionamento de Renan sobre o segundo turno.
+                    </small>
+</li>
+<li>
+<a href="https://www.tse.jus.br/comunicacao/noticias/2026/Outubro/presidente-do-tse-anuncia-reeleicao-de-lula-e-faz-balanco-do-2o-turno-das-eleicoes-2026" rel="noopener noreferrer" target="_blank">
+                        TSE — Resultado oficial do segundo turno de 2026
+                    </a>
+<small>
+                        Comunicado de 26 de outubro com os números da votação
+                        e o anúncio do presidente reeleito.
+                    </small>
+</li>
+<li>
+<a href="https://www.tse.jus.br/eleicoes/eleicoes-2026-content/divulgacao-dos-resultados-das-eleicoes-2026" rel="noopener noreferrer" target="_blank">
+                        TSE — Portal de resultados das Eleições 2026
+                    </a>
+<small>
+                        Acesso aos resultados e à apuração disponibilizados
+                        pela Justiça Eleitoral.
+                    </small>
+</li>
+</ul>
+<h3>5. Créditos das imagens</h3>
+<ul class="referencias">
+<li>
+<a href="https://commons.wikimedia.org/wiki/File:Bandeira_Partido_Miss%C3%A3o.jpg" rel="noopener noreferrer" target="_blank">
+                        Wikimedia Commons — Bandeira do Partido Missão
+                    </a>
+<small>
+                        Imagem utilizada nas páginas anteriores. A página do
+                        arquivo informa sua autoria e licença.
+                    </small>
+</li>
+<li>
+<a href="https://pleno.news/brasil/eleicoes-2026/missao-lanca-candidatura-de-renan-santos-a-presidencia.html" rel="noopener noreferrer" target="_blank">
+                        Pleno.News — Fotografia de Renan Santos em evento da campanha
+                    </a>
+<small>
+                        Publicação de origem da imagem apresentada na Página 4.
+                    </small>
+</li>
+</ul>
+<h3>Como diferenciar os tipos de informação?</h3>
+<div class="destaque">
+<p><strong>História:</strong> eventos e registros já documentados.</p>
+<p><strong>Propostas:</strong> ideias defendidas por um candidato ou partido; não são necessariamente leis em vigor.</p>
+<p><strong>Resultados eleitorais:</strong> dados de votação publicados pela Justiça Eleitoral.</p>
+</div>
+<p><strong>Data da consulta:</strong> 27 de outubro de 2026.</p>
+<p><a href="index.html">Voltar à página inicial</a></p>
+</main>
+</div>
+<!-- Rodapé compartilhado pelas páginas da atividade -->
+<div id="footer">
+<p>Atividade Acadêmica - História do MBL e Partido Missão</p>
+</div>
+</body>
+</html>

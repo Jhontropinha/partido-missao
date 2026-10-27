@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="História do Movimento Brasil Livre, fundação e atuação na política brasileira.">
+    <title>História e Criação do MBL</title>
+    <style>
+/* ================================================================
+   Atividade acadêmica: MBL e Partido Missão
+   CSS integrado a esta página HTML (sem arquivos externos)
+   Paleta inspirada nas cores da identidade visual do partido:
+     Amarelo: #FBBD24 | Preto: #141414 | Branco: #FFFFFF
+   Para mudar as cores desta página, altere as variáveis abaixo.
+   ================================================================ */
+
+:root {
+    --amarelo: #fbbd24;
+    --amarelo-escuro: #cc8f00;
+    --preto: #141414;
+    --preto-suave: #252525;
+    --branco: #ffffff;
+    --fundo: #f7f7f4;
+    --fundo-menu: #fff9e9;
+    --destaque-claro: #fff5d6;
+    --texto: #252525;
+    --texto-suave: #5b5b5b;
+    --borda: #e8e3d6;
+    --raio: 14px;
+    --sombra: 0 9px 32px rgba(20,20,20,.075);
+}
+
+/* 1. Regras básicas e acessibilidade */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    margin: 0;
+    padding: 24px 16px 30px;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+}
+a { color: #775000; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: #3c2900; }
+a:focus-visible {
+    outline: 3px solid var(--amarelo-escuro);
+    outline-offset: 3px;
+    border-radius: 3px;
+}
+::selection { background: var(--amarelo); color: var(--preto); }
+
+/* 2. Cabeçalho: amarelo, preto e branco */
+#header {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 25px 28px 26px;
+    border-top: 7px solid var(--amarelo);
+    border-radius: var(--raio) var(--raio) 0 0;
+    background: linear-gradient(115deg, var(--preto) 0%, #292929 100%);
+    color: var(--branco);
+    text-align: center;
+}
+#header::before {
+    content: "MISSÃO 14  •  ATIVIDADE ACADÊMICA";
+    display: inline-block;
+    padding: 3px 12px;
+    margin-bottom: 8px;
+    border: 1px solid rgba(251,189,36,.5);
+    border-radius: 100px;
+    color: var(--amarelo);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+#header h1 {
+    margin: 6px 0 4px;
+    font-size: clamp(25px, 4vw, 35px);
+    line-height: 1.2;
+    letter-spacing: -.6px;
+}
+#header p { margin: 0; color: #e1e1e1; font-size: 14px; }
+
+/* 3. Layout em duas colunas e menu lateral */
+#container {
+    display: grid;
+    grid-template-columns: 253px minmax(0, 1fr);
+    max-width: 1160px;
+    min-height: 500px;
+    margin: 0 auto;
+    border-left: 1px solid var(--borda);
+    border-right: 1px solid var(--borda);
+    background: var(--branco);
+    box-shadow: var(--sombra);
+}
+#menu {
+    padding: 25px 15px 28px;
+    border-right: 1px solid #eddba5;
+    background: var(--fundo-menu);
+}
+#menu::before {
+    content: "EXPLORAR O PROJETO";
+    display: block;
+    padding: 0 11px 11px;
+    color: #756338;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+#menu ul { list-style: none; margin: 0; padding: 0; }
+#menu li { margin: 0 0 6px; }
+#menu a {
+    display: block;
+    padding: 11px 12px;
+    border-left: 4px solid transparent;
+    border-radius: 7px;
+    color: var(--preto);
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 600;
+    transition: background-color .15s ease, border-color .15s ease;
+}
+#menu a:hover { border-color: var(--amarelo); background: #f4e8c1; }
+#menu a[aria-current="page"] {
+    border-color: var(--amarelo);
+    background: var(--amarelo);
+    color: var(--preto);
+    font-weight: 800;
+}
+
+/* 4. Conteúdo principal */
+#main {
+    min-width: 0;
+    padding: 34px clamp(20px, 4vw, 50px) 50px;
+    background: var(--branco);
+}
+#main h2 {
+    margin: 0 0 20px;
+    padding-bottom: 14px;
+    border-bottom: 3px solid var(--amarelo);
+    color: var(--preto);
+    font-size: clamp(24px, 3vw, 30px);
+    line-height: 1.25;
+}
+#main h3 {
+    margin: 28px 0 10px;
+    color: var(--preto);
+    font-size: 19px;
+    line-height: 1.3;
+}
+#main p { margin: 0 0 16px; line-height: 1.8; text-align: left; }
+#main ul, #main ol { padding-left: 23px; }
+#main li { padding-left: 2px; margin: 6px 0; line-height: 1.7; }
+#main li::marker { color: var(--amarelo-escuro); }
+#main strong { color: #191919; }
+#main > p:last-child { margin-top: 24px; }
+
+/* 5. Caixas de informação e cartões de fontes */
+.destaque {
+    max-width: 100%;
+    margin: 20px 0 26px;
+    padding: 17px 21px;
+    border-left: 5px solid var(--amarelo);
+    border-radius: 0 9px 9px 0;
+    background: var(--destaque-claro);
+}
+.destaque p { margin: 5px 0 !important; }
+.referencias { list-style: none; padding: 0 !important; }
+.referencias li {
+    padding: 15px 17px !important;
+    margin: 10px 0 !important;
+    border: 1px solid var(--borda);
+    border-left: 4px solid var(--amarelo);
+    border-radius: 8px;
+    background: #fffefa;
+}
+.referencias li a { font-weight: 700; }
+.referencias small {
+    display: block;
+    margin-top: 5px;
+    color: var(--texto-suave);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* 6. Imagens e legendas (mantém fotos existentes) */
+figure {
+    max-width: 710px;
+    margin: 18px 0 28px;
+    overflow: hidden;
+    border: 1px solid var(--borda);
+    border-radius: 11px;
+    background: #fffdf8;
+}
+figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 440px;
+    object-fit: contain;
+    background: #f5f5f5;
+}
+figcaption {
+    padding: 11px 14px;
+    border-top: 1px solid var(--borda);
+    color: var(--texto-suave);
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+/* 7. Rodapé compartilhado */
+#footer {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 21px;
+    border-top: 4px solid var(--amarelo);
+    border-radius: 0 0 var(--raio) var(--raio);
+    background: var(--preto);
+    color: var(--branco);
+    text-align: center;
+    font-size: 13px;
+}
+#footer p { margin: 0; }
+
+/* 8. Ajustes responsivos */
+@media (max-width: 760px) {
+    body { padding: 10px 8px 18px; }
+    #header { padding: 24px 14px; }
+    #container { grid-template-columns: minmax(0, 1fr); }
+    #menu { border-right: 0; border-bottom: 1px solid #eddba5; padding: 15px 12px; }
+    #menu ul { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 5px; }
+    #menu li { margin: 0; }
+    #menu a { padding: 10px; font-size: 13px; }
+    #main { padding: 26px 18px 36px; }
+}
+@media (max-width: 420px) {
+    #menu ul { grid-template-columns: 1fr; }
+    #header::before { letter-spacing: .6px; font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+}
+
+</style>
+</head>
+<body>
+    <header id="header">
+        <h1>Movimento Brasil Livre (MBL)</h1>
+        <p>História e criação do movimento político</p>
+    </header>
+    <div id="container">
+        <nav id="menu" aria-label="Menu principal">
+            <ul>
+                <li><a href="index.html">Página Inicial</a></li>
+                <li><a href="pagina1.html" aria-current="page">História do MBL</a></li>
+                <li><a href="pagina2.html">Criação do Partido Missão</a></li>
+                <li><a href="pagina3.html">Propostas Políticas</a></li>
+                <li><a href="pagina4.html">Eleições de 2026</a></li>
+                <li><a href="pagina5.html">Fontes Oficiais</a></li>
+            </ul>
+        </nav>
+        <main id="main">
+            <h2>História e Criação do MBL</h2>
+            <h3>O que é o MBL?</h3>
+            <p>O Movimento Brasil Livre (MBL) é um movimento político brasileiro
+               criado em 2014, que ganhou destaque nacional por defender ideias
+               relacionadas ao liberalismo econômico, à liberdade individual
+               e ao combate à corrupção.</p>
+            <h3>Como surgiu o MBL?</h3>
+            <p>O MBL surgiu em um período de insatisfação política no Brasil,
+               após as manifestações de junho de 2013 e no contexto das eleições
+               presidenciais de 2014. Seus integrantes passaram a organizar
+               manifestações e utilizar as redes sociais para divulgar suas ideias.</p>
+            <h3>Quem foram os fundadores?</h3>
+            <p>Entre os nomes ligados à fundação e à organização do movimento estão
+               Kim Kataguiri e Renan Santos, que se tornaram algumas de suas
+               figuras públicas mais conhecidas.</p>
+            <h3>Principais objetivos do movimento</h3>
+            <p>Ao longo de sua atuação, o MBL defendeu diferentes propostas
+               políticas e econômicas. Entre suas bandeiras estão:</p>
+            <ul>
+                <li>Defesa da liberdade econômica;</li>
+                <li>Redução da burocracia estatal;</li>
+                <li>Combate à corrupção;</li>
+                <li>Defesa da liberdade de expressão;</li>
+                <li>Valorização da propriedade privada;</li>
+                <li>Reformas políticas e econômicas.</li>
+            </ul>
+            <h3>Participação no impeachment de Dilma Rousseff</h3>
+            <p>Entre 2015 e 2016, o MBL se destacou pela organização e participação
+               em manifestações contrárias ao governo de Dilma Rousseff.
+               O movimento esteve entre os grupos que defenderam o impeachment
+               da então presidente, concluído em agosto de 2016.</p>
+            <h3>Expansão e participação nas eleições</h3>
+            <p>Após o impeachment, o MBL passou a apoiar candidaturas em eleições
+               municipais, estaduais e federais. Nas eleições de 2018, integrantes
+               associados ao movimento conquistaram mandatos, incluindo
+               Kim Kataguiri, eleito deputado federal por São Paulo.</p>
+            <h3>Rompimento com Jair Bolsonaro</h3>
+            <p>Embora algumas lideranças do MBL tenham apoiado Jair Bolsonaro
+               nas eleições de 2018, o movimento posteriormente passou a
+               criticar seu governo. Em 2021, participou de manifestações
+               contrárias ao então presidente.</p>
+            <h3>Do MBL ao Partido Missão</h3>
+            <p>Em 2023, integrantes do movimento anunciaram o projeto de criação
+               do Partido Missão. A intenção era formar uma legenda própria para
+               disputar eleições e apresentar candidatos relacionados ao projeto político
+               do movimento. O registro oficial foi aprovado pelo Tribunal Superior
+               Eleitoral em <strong>4 de novembro de 2025</strong>.</p>
+            <div class="destaque">
+                <p><strong>Você sabia?</strong> O MBL não é um partido político.
+                   É um movimento que participa do debate público e da organização política.
+                   Já o Partido Missão é uma legenda registrada na Justiça Eleitoral,
+                   identificada pelo número <strong>14</strong>.</p>
+            </div>
+            <h3>Fontes de pesquisa</h3>
+            <ul>
+                <li><a href="https://mbl.org.br/" target="_blank" rel="noopener noreferrer">Site do MBL</a></li>
+                <li><a href="https://neamp.pucsp.br/organizacoes/movimento-brasil-livre-mbl" target="_blank" rel="noopener noreferrer">PUC-SP — História do MBL</a></li>
+                <li><a href="https://www.tse.jus.br/" target="_blank" rel="noopener noreferrer">Tribunal Superior Eleitoral</a></li>
+            </ul>
+            <p><a href="index.html">Voltar à página inicial</a></p>
+        </main>
+    </div>
+    <footer id="footer"><p>Atividade Acadêmica - História do MBL e Partido Missão</p></footer>
+</body>
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Criação do Partido Missão</title>
+
+<style>
+/* ================================================================
+   Atividade acadêmica: MBL e Partido Missão
+   CSS integrado a esta página HTML (sem arquivos externos)
+   Paleta inspirada nas cores da identidade visual do partido:
+     Amarelo: #FBBD24 | Preto: #141414 | Branco: #FFFFFF
+   Para mudar as cores desta página, altere as variáveis abaixo.
+   ================================================================ */
+
+:root {
+    --amarelo: #fbbd24;
+    --amarelo-escuro: #cc8f00;
+    --preto: #141414;
+    --preto-suave: #252525;
+    --branco: #ffffff;
+    --fundo: #f7f7f4;
+    --fundo-menu: #fff9e9;
+    --destaque-claro: #fff5d6;
+    --texto: #252525;
+    --texto-suave: #5b5b5b;
+    --borda: #e8e3d6;
+    --raio: 14px;
+    --sombra: 0 9px 32px rgba(20,20,20,.075);
+}
+
+/* 1. Regras básicas e acessibilidade */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    margin: 0;
+    padding: 24px 16px 30px;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+}
+a { color: #775000; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: #3c2900; }
+a:focus-visible {
+    outline: 3px solid var(--amarelo-escuro);
+    outline-offset: 3px;
+    border-radius: 3px;
+}
+::selection { background: var(--amarelo); color: var(--preto); }
+
+/* 2. Cabeçalho: amarelo, preto e branco */
+#header {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 25px 28px 26px;
+    border-top: 7px solid var(--amarelo);
+    border-radius: var(--raio) var(--raio) 0 0;
+    background: linear-gradient(115deg, var(--preto) 0%, #292929 100%);
+    color: var(--branco);
+    text-align: center;
+}
+#header::before {
+    content: "MISSÃO 14  •  ATIVIDADE ACADÊMICA";
+    display: inline-block;
+    padding: 3px 12px;
+    margin-bottom: 8px;
+    border: 1px solid rgba(251,189,36,.5);
+    border-radius: 100px;
+    color: var(--amarelo);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+#header h1 {
+    margin: 6px 0 4px;
+    font-size: clamp(25px, 4vw, 35px);
+    line-height: 1.2;
+    letter-spacing: -.6px;
+}
+#header p { margin: 0; color: #e1e1e1; font-size: 14px; }
+
+/* 3. Layout em duas colunas e menu lateral */
+#container {
+    display: grid;
+    grid-template-columns: 253px minmax(0, 1fr);
+    max-width: 1160px;
+    min-height: 500px;
+    margin: 0 auto;
+    border-left: 1px solid var(--borda);
+    border-right: 1px solid var(--borda);
+    background: var(--branco);
+    box-shadow: var(--sombra);
+}
+#menu {
+    padding: 25px 15px 28px;
+    border-right: 1px solid #eddba5;
+    background: var(--fundo-menu);
+}
+#menu::before {
+    content: "EXPLORAR O PROJETO";
+    display: block;
+    padding: 0 11px 11px;
+    color: #756338;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+#menu ul { list-style: none; margin: 0; padding: 0; }
+#menu li { margin: 0 0 6px; }
+#menu a {
+    display: block;
+    padding: 11px 12px;
+    border-left: 4px solid transparent;
+    border-radius: 7px;
+    color: var(--preto);
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 600;
+    transition: background-color .15s ease, border-color .15s ease;
+}
+#menu a:hover { border-color: var(--amarelo); background: #f4e8c1; }
+#menu a[aria-current="page"] {
+    border-color: var(--amarelo);
+    background: var(--amarelo);
+    color: var(--preto);
+    font-weight: 800;
+}
+
+/* 4. Conteúdo principal */
+#main {
+    min-width: 0;
+    padding: 34px clamp(20px, 4vw, 50px) 50px;
+    background: var(--branco);
+}
+#main h2 {
+    margin: 0 0 20px;
+    padding-bottom: 14px;
+    border-bottom: 3px solid var(--amarelo);
+    color: var(--preto);
+    font-size: clamp(24px, 3vw, 30px);
+    line-height: 1.25;
+}
+#main h3 {
+    margin: 28px 0 10px;
+    color: var(--preto);
+    font-size: 19px;
+    line-height: 1.3;
+}
+#main p { margin: 0 0 16px; line-height: 1.8; text-align: left; }
+#main ul, #main ol { padding-left: 23px; }
+#main li { padding-left: 2px; margin: 6px 0; line-height: 1.7; }
+#main li::marker { color: var(--amarelo-escuro); }
+#main strong { color: #191919; }
+#main > p:last-child { margin-top: 24px; }
+
+/* 5. Caixas de informação e cartões de fontes */
+.destaque {
+    max-width: 100%;
+    margin: 20px 0 26px;
+    padding: 17px 21px;
+    border-left: 5px solid var(--amarelo);
+    border-radius: 0 9px 9px 0;
+    background: var(--destaque-claro);
+}
+.destaque p { margin: 5px 0 !important; }
+.referencias { list-style: none; padding: 0 !important; }
+.referencias li {
+    padding: 15px 17px !important;
+    margin: 10px 0 !important;
+    border: 1px solid var(--borda);
+    border-left: 4px solid var(--amarelo);
+    border-radius: 8px;
+    background: #fffefa;
+}
+.referencias li a { font-weight: 700; }
+.referencias small {
+    display: block;
+    margin-top: 5px;
+    color: var(--texto-suave);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* 6. Imagens e legendas (mantém fotos existentes) */
+figure {
+    max-width: 710px;
+    margin: 18px 0 28px;
+    overflow: hidden;
+    border: 1px solid var(--borda);
+    border-radius: 11px;
+    background: #fffdf8;
+}
+figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 440px;
+    object-fit: contain;
+    background: #f5f5f5;
+}
+figcaption {
+    padding: 11px 14px;
+    border-top: 1px solid var(--borda);
+    color: var(--texto-suave);
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+/* 7. Rodapé compartilhado */
+#footer {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 21px;
+    border-top: 4px solid var(--amarelo);
+    border-radius: 0 0 var(--raio) var(--raio);
+    background: var(--preto);
+    color: var(--branco);
+    text-align: center;
+    font-size: 13px;
+}
+#footer p { margin: 0; }
+
+/* 8. Ajustes responsivos */
+@media (max-width: 760px) {
+    body { padding: 10px 8px 18px; }
+    #header { padding: 24px 14px; }
+    #container { grid-template-columns: minmax(0, 1fr); }
+    #menu { border-right: 0; border-bottom: 1px solid #eddba5; padding: 15px 12px; }
+    #menu ul { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 5px; }
+    #menu li { margin: 0; }
+    #menu a { padding: 10px; font-size: 13px; }
+    #main { padding: 26px 18px 36px; }
+}
+@media (max-width: 420px) {
+    #menu ul { grid-template-columns: 1fr; }
+    #header::before { letter-spacing: .6px; font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+}
+
+</style></head>
+<body>
+<!-- Cabeçalho da segunda página -->
+<div id="header">
+<h1>Partido Missão</h1>
+<p>História, criação e registro oficial</p>
+</div>
+<div id="container">
+<!-- Links para todas as páginas da atividade -->
+<nav aria-label="Menu principal" id="menu">
+<ul>
+<li><a href="index.html">Página Inicial</a></li>
+<li><a href="pagina1.html">História do MBL</a></li>
+<li><a aria-current="page" href="pagina2.html">Criação do Partido Missão</a></li>
+<li><a href="pagina3.html">Propostas Políticas</a></li>
+<li><a href="pagina4.html">Eleições de 2026</a></li>
+<li><a href="pagina5.html">Fontes Oficiais</a></li>
+</ul>
+</nav>
+<!-- Conteúdo principal: história do partido e imagens históricas -->
+<div id="main">
+<h2>História e Criação do Partido Missão</h2>
+<h3>O que é o Partido Missão?</h3>
+<p>
+                O Partido Missão é uma legenda política brasileira associada ao
+                Movimento Brasil Livre (MBL). Seu objetivo inicial foi reunir
+                integrantes e apoiadores do movimento em um partido próprio,
+                capaz de apresentar candidatos nas eleições brasileiras.
+            </p>
+<p>
+                É importante diferenciar as duas organizações: o MBL é um movimento
+                político, enquanto o Missão é um partido registrado na Justiça Eleitoral.
+            </p>
+<h3>2023: o início do projeto</h3>
+<p>
+                Segundo o Tribunal Superior Eleitoral (TSE), o partido obteve registro
+                em cartório civil em <strong>23 de outubro de 2023</strong>.
+                Poucos dias depois, em <strong>4 de novembro de 2023</strong>,
+                a iniciativa foi anunciada publicamente durante o 8º Congresso
+                Nacional do MBL. Na ocasião, foram apresentados o nome Missão,
+                a identidade visual com uma onça-pintada e a intenção de participar
+                das eleições de 2026.
+            </p>
+<!-- Foto jornalística do anúncio do partido em 2023 -->
+<figure>
+<img alt="Público reunido no congresso do MBL em 2023, com a palavra Missão projetada no palco" loading="lazy" src="../img/Anuncio do Partido Missao.jpg"/>
+<figcaption>
+                    Anúncio público do Partido Missão no congresso do MBL, em novembro de 2023.
+                    Foto publicada pela
+                    <a href="https://jovempan.com.br/noticias/mbl-anuncia-criacao-de-novo-partido-politico-chamado-missao/" rel="noopener noreferrer" target="_blank">Jovem Pan</a>.
+                </figcaption>
+</figure>
+<h3>2023 a 2025: coleta de assinaturas</h3>
+<p>
+                Para conseguir o registro definitivo, o Missão precisou cumprir
+                requisitos legais, como reunir apoios de eleitores distribuídos
+                por diferentes estados e organizar diretórios partidários.
+                Em junho de 2025, lideranças do MBL comemoraram o avanço da
+                coleta de assinaturas para a formação da legenda.
+            </p>
+<!-- Foto da comemoração da etapa de coleta de apoios em 2025 -->
+<figure>
+<img alt="Integrantes do MBL reunidos em estúdio durante a comemoração da coleta de apoios ao Partido Missão" loading="lazy" src="https://i0.statig.com.br/bancodeimagens/2y/qv/bc/2yqvbcppa45uwi8ym3b1bv4k0.jpg"/>
+<figcaption>
+                    Integrantes comemoram a etapa de coleta de assinaturas, em 2025.
+                    Imagem reproduzida pelo
+                    <a href="https://ultimosegundo.ig.com.br/politica/2025-06-26/mbl-consegue-assinatura-para-fazer-partido-politico-missao.html" rel="noopener noreferrer" target="_blank">portal iG</a> (reprodução de vídeo).
+                </figcaption>
+</figure>
+<h3>4 de novembro de 2025: registro no TSE</h3>
+<p>
+                Em <strong>4 de novembro de 2025</strong>, o Tribunal Superior
+                Eleitoral aprovou, por unanimidade, o registro do estatuto do
+                Partido Missão. De acordo com o TSE, a legenda apresentou
+                <strong>577.999 apoios válidos</strong>, quantidade superior ao
+                mínimo exigido, e comprovou a organização de diretórios
+                estaduais em pelo menos nove unidades da Federação.
+            </p>
+<p>
+                Com a decisão, o Missão passou a integrar a lista de partidos
+                registrados na Justiça Eleitoral, podendo lançar candidatos
+                e participar oficialmente de eleições. O número escolhido
+                para a legenda é <strong>14</strong>.
+            </p>
+<div class="destaque">
+<p><strong>Nome:</strong> Partido Missão</p>
+<p><strong>Sigla:</strong> MISSÃO</p>
+<p><strong>Número eleitoral:</strong> 14</p>
+<p><strong>Presidente nacional:</strong> Renan Antonio Ferreira dos Santos</p>
+<p><strong>Registro no TSE:</strong> 4 de novembro de 2025</p>
+</div>
+<h3>Qual é o símbolo do partido?</h3>
+<p>
+                A identidade visual do Missão utiliza as cores preto, branco
+                e amarelo e a figura de uma <strong>onça-pintada</strong>.
+                Abaixo, um registro da bandeira do partido.
+            </p>
+<!-- Bandeira disponível no Wikimedia Commons sob licença CC0 -->
+<figure>
+<img alt="Bandeira do Partido Missão nas cores preto, branco e amarelo com a ilustração de uma onça-pintada" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Bandeira_Partido_Miss%C3%A3o.jpg/960px-Bandeira_Partido_Miss%C3%A3o.jpg"/>
+<figcaption>
+                    Bandeira do Partido Missão. Imagem de Gabriel de C. M. Fortes,
+                    publicada no
+                    <a href="https://commons.wikimedia.org/wiki/File:Bandeira_Partido_Miss%C3%A3o.jpg" rel="noopener noreferrer" target="_blank">Wikimedia Commons</a>
+                    sob licença CC0.
+                </figcaption>
+</figure>
+<h3>Por que criar um partido próprio?</h3>
+<p>
+                A criação do Missão foi apresentada por seus organizadores
+                como uma maneira de disputar eleições com identidade e
+                programa partidário próprios. Durante o anúncio de 2023,
+                seus representantes citaram como prioridades propostas
+                relacionadas à administração pública, segurança e economia.
+                O detalhamento das propostas será apresentado na Página 3.
+            </p>
+<h3>Fontes de pesquisa</h3>
+<ul>
+<li>
+<a href="https://www.tse.jus.br/comunicacao/noticias/2025/Novembro/tse-aprova-registro-e-homologa-estatuto-do-partido-missao" rel="noopener noreferrer" target="_blank">
+                        TSE — Aprovação do registro do Partido Missão
+                    </a>
+</li>
+<li>
+<a href="https://www.tse.jus.br/partidos/partidos-registrados-no-tse/partido-missao" rel="noopener noreferrer" target="_blank">
+                        TSE — Informações oficiais sobre o partido
+                    </a>
+</li>
+<li>
+<a href="https://jovempan.com.br/noticias/mbl-anuncia-criacao-de-novo-partido-politico-chamado-missao/" rel="noopener noreferrer" target="_blank">
+                        Jovem Pan — Anúncio público em 2023
+                    </a>
+</li>
+<li>
+<a href="https://ultimosegundo.ig.com.br/politica/2025-06-26/mbl-consegue-assinatura-para-fazer-partido-politico-missao.html" rel="noopener noreferrer" target="_blank">
+                        iG — Coleta de assinaturas em 2025
+                    </a>
+</li>
+</ul>
+<p><a href="index.html">Voltar à página inicial</a></p>
+</div>
+</div>
+<!-- Rodapé no mesmo estilo da primeira página -->
+<div id="footer">
+<p>Atividade Acadêmica - História do MBL e Partido Missão</p>
+</div>
+</body>
+</html>
